@@ -37,6 +37,7 @@ jobs:
         run: |
           ./run_tests.sh
       - name: Archive code coverage results
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report
