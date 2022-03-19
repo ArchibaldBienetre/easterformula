@@ -16,7 +16,11 @@ def calculateEasterSundayDate(year):
     p = (h + l - 7 * m + 114) % 31
     day = p + 1
 
+    return str(year) + "-0" + str(month) + "-" + day_str(day)
+
+
+def day_str(day):
     if day > 9:
-        return str(year) + "-0" + str(month) + "-" + str(day)
+        return str(day)
     else:
-        return str(year) + "-0" + str(month) + "-0" + str(day)
+        return "0" + str(day)
