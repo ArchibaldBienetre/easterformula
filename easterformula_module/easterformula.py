@@ -30,15 +30,22 @@ def calculateEasterSundayDate(year):
 
     # date as number of day in March
     os = og + oe
-    if os > 31:
-        # maps over to April: 32nd March -> 1st April etc
-        day = os - 31
-        if day < 10:
-            return str(year) + "-04-0" + str(day)
-        else:
-            return str(year) + "-04-" + str(day)
+
+    return str(year) + "-" + month_str(os) + "-" + day_str(os)
+
+
+def month_str(day):
+    if day > 31:
+        return "04"
     else:
-        if os < 10:
-            return str(year) + "-03-0" + str(os)
-        else:
-            return str(year) + "-03-" + str(os)
+        return "03"
+
+
+def day_str(day):
+    if day > 31:
+        day = day - 31
+
+    if day < 10:
+        return "0" + str(day)
+    else:
+        return str(day)
