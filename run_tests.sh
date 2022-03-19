@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python3 -m tests.easterformula_tests
+python -m pytest --cov=easterformula_module  --cov-report=html tests/easterformula_tests.py
