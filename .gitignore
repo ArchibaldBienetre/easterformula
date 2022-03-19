@@ -1,1 +1,10 @@
+
+# IDE
 /.idea
+
+# python cache
+__pycache__
+
+# python test coverage
+/.coverage
+/htmlcov
