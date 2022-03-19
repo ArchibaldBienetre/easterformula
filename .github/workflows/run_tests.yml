@@ -36,3 +36,9 @@ jobs:
       - name: Test with pytest
         run: |
           ./run_tests.sh
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: htmlcov
+          retention-days: 7
