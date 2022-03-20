@@ -36,7 +36,14 @@ jobs:
       - name: Test with pytest
         run: |
           ./run_tests.sh
-      - name: Archive code coverage results
+      - name: Archive test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: report.html
+          retention-days: 7
+      - name: Archive test code coverage results
         if: always()
         uses: actions/upload-artifact@v3
         with:
